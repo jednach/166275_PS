@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define N 100
+#define N 10
 void generuj(short [],int,short,short);
 void wypisz(short [],int);
 int ileDodatnich(const short [],int );
@@ -85,13 +85,13 @@ int dlugoscMaksymalnegoCiaguDodatnich(const short tab[], int n)
     for(int i=0;i<n;i++)
     {
         if(tab[i]>0)
-            dl++;
+            {
+                dl++;
+                if(dl>maks)
+                    maks=dl;
+            }
         else
-        {
-            if(dl>maks)
-                maks=dl;
             dl=0;
-        }
     }
     return maks;
 }
